@@ -1,1 +1,12 @@
-//teste 01 ...
+Configurando IP de um roteador e ligando o sistema:
+
+enable	
+show ip interface brief
+configure terminal
+interface g0/0
+ip adress 192.168.1.2 255.255.255.0
+no shutdown
+end
+copy running-config startup-config
+
+---------------------------------------------------------------------
