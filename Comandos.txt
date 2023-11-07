@@ -25,3 +25,17 @@ end
 copy running-config startup-config
 
 ---------------------------------------------------------------------
+
+Configurando senha e login para um equipamento na rede:
+//Geralmente deve-se usar uma senha para cada equipamento da rede exceto os computadores e equipamentos finais
+
+enable	
+configure terminal
+line console 0
+password cisco
+login
+exit
+enable secret cisco
+exit
+
+---------------------------------------------------------------------
