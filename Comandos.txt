@@ -10,6 +10,7 @@ ip adress 192.168.1.2 255.255.255.0
 no shutdown
 end
 copy running-config startup-config
+show running-config
 
 ---------------------------------------------------------------------
 
@@ -19,10 +20,12 @@ enable
 show ip interface brief
 configure terminal
 interface vlan1
-ip address 192.168.1.1
+ip address 192.168.1.1 255.255.255.0
 no shutdown
-end
+exit
+ip default-gateway 192.168.1.1
 copy running-config startup-config
+show running-config
 
 ---------------------------------------------------------------------
 
@@ -37,5 +40,6 @@ login
 exit
 enable secret cisco
 exit
+show running-config
 
 ---------------------------------------------------------------------
