@@ -9,6 +9,7 @@ interface g0/0
 ip address 192.168.1.2 255.255.255.0
 no shutdown
 end
+
 copy running-config startup-config
 show running-config
 
@@ -24,13 +25,18 @@ ip address 192.168.1.1 255.255.255.0
 no shutdown
 exit
 ip default-gateway 192.168.1.1
+
 copy running-config startup-config
 show running-config
 
 ---------------------------------------------------------------------
 
 Configurando senha e login para um equipamento na rede:
-//Geralmente deve-se usar uma senha para cada equipamento da rede exceto os computadores e equipamentos finais
+
+/*
+Geralmente deve-se usar uma senha para cada equipamento da rede 
+exceto os computadores e equipamentos finais
+*/
 
 enable	
 configure terminal
@@ -40,6 +46,23 @@ login
 exit
 enable secret cisco
 exit
+
+show running-config
+
+---------------------------------------------------------------------
+
+Configurando DHCP de roteador para fornecer IPs de rede interna e excluindo uma faixa de IPs:
+
+enable
+configure terminal
+ip dhcp excluded-address 10.11.1.1 10.11.1.10
+ip dhcp pool Rede-Direcao
+network 10.11.1.0 255.255.255.0
+default-router 10.11.1.1
+dns-server 8.8.8.8
+end
+
+copy running-config startup-config
 show running-config
 
 ---------------------------------------------------------------------
