@@ -66,3 +66,17 @@ copy running-config startup-config
 show running-config
 
 ---------------------------------------------------------------------
+
+Configurando rotas estáticas em roteadores:
+
+enable	
+configure terminal
+ip route 192.168.2.0 255.255.255.0 192.168.0.2
+ip route 192.168.3.0 255.255.255.0 192.168.0.3
+ip route 192.168.n.0 255.255.255.0 192.168.0.n
+exit
+
+copy running-config startup-config
+show running-config
+
+---------------------------------------------------------------------
