@@ -1,4 +1,4 @@
----------------------------------------------------------------------
+___________________________________________________________________________________________________________________
 
 Configurando IP de um roteador e ligando o sistema:
 
@@ -13,7 +13,7 @@ end
 copy running-config startup-config
 show running-config
 
----------------------------------------------------------------------
+___________________________________________________________________________________________________________________
 
 Configurando IP de um Switch e ligando o sistema:
 
@@ -29,7 +29,7 @@ ip default-gateway 192.168.1.1
 copy running-config startup-config
 show running-config
 
----------------------------------------------------------------------
+___________________________________________________________________________________________________________________
 
 Configurando senha e login para um equipamento na rede:
 
@@ -49,7 +49,7 @@ exit
 
 show running-config
 
----------------------------------------------------------------------
+___________________________________________________________________________________________________________________
 
 Configurando DHCP de roteador para fornecer IPs de rede interna e excluindo uma faixa de IPs:
 
@@ -65,7 +65,7 @@ end
 copy running-config startup-config
 show running-config
 
----------------------------------------------------------------------
+___________________________________________________________________________________________________________________
 
 Configurando rotas estáticas em roteadores:
 
@@ -79,4 +79,30 @@ exit
 copy running-config startup-config
 show running-config
 
----------------------------------------------------------------------
+___________________________________________________________________________________________________________________
+
+Utilizando, nas redes internas, o primeiro IPv6 da rede para configurar a interface do roteador:
+
+enable	
+configure terminal
+interface GigabitEthernet0/0
+ipv6 address 2001:1ff:11:1::1/64
+no shutdown
+end
+
+copy running-config startup-config
+show running-config
+
+___________________________________________________________________________________________________________________
+
+Ativando o roteamento IPv6 no roteador, e verificando se os hosts conseguiram se autoconfigurar com o IPv6:
+
+enable	
+configure terminal
+ipv6 unicast-routing
+end
+
+copy running-config startup-config
+show running-config
+
+___________________________________________________________________________________________________________________
